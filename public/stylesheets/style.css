@@ -1,0 +1,55 @@
+body {
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    justify-content: center;
+    /*align-content: center;*/
+    align-items: center;
+    display: flex;
+    /*position: fixed;*/
+    /*background: black;*/
+}
+
+a {
+    color: #00B7FF;
+}
+
+h1 {
+    border: solid;
+    position: fixed;
+    width: 100%;
+}
+
+p {
+    position: fixed;
+}
+
+.desc {
+    display: inline-block;
+    color: white;
+}
+
+#content {
+    justify-content: center;
+    /*align-content: center;*/
+    align-items: center;
+    border: solid;
+
+    height: 42em;
+}
+
+img {
+    position: center;
+    margin: auto;
+    height: 100%;
+}
+.nav-btn {
+    margin-top: 18em;
+}
+#next {
+    right: 5em;
+    position: fixed;
+}
+
+#prev {
+    left: 5em;
+    position: fixed;
+}
