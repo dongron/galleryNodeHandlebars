@@ -13,9 +13,11 @@ a {
 }
 
 h1 {
-    border: solid;
+    /*border: solid;*/
     position: fixed;
-    width: 100%;
+    /*width: 100%;*/
+    padding-left: 2em;
+    width: 22.5em;
 }
 
 p {
@@ -32,7 +34,7 @@ p {
     /*align-content: center;*/
     align-items: center;
     border: solid;
-
+    margin-top: 1em;
     height: 42em;
 }
 
@@ -42,7 +44,8 @@ img {
     height: 100%;
 }
 .nav-btn {
-    margin-top: 18em;
+    margin-top: 15em;
+
 }
 #next {
     right: 5em;

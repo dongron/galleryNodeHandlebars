@@ -3,12 +3,12 @@
 <script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
 
 <div id="content">
-    <h1 class="desc">{{title}}</h1>
-    <!--<p class="desc">{{describtion}}</p>-->
-    <button id='prev' class="nav-btn btn btn-primary" type = "submit" value = "Rent"> <!--disabled-->
+    <!--<h1 class="desc">{{"Photo gallery"}}</h1>-->
+    <h1 class="desc">{{describtion}}</h1>
+    <button id='prev' class="nav-btn btn btn-lg btn-primary" type = "submit" value = "Rent"> <!--disabled-->
         <span class="glyphicon glyphicon-menu-left"></span>
     </button>
-    <button id='next' class="nav-btn btn btn-primary" type = "submit" value = "Rent"> <!--disabled-->
+    <button id='next' class="nav-btn btn btn-lg btn-primary" type = "submit" value = "Rent"> <!--disabled-->
         <span class="glyphicon glyphicon-menu-right"></span>
     </button>
     <img class="image" src="{{imgURL}}">
@@ -16,4 +16,14 @@
 
 </div>
 
+
+
+<script type="javascript">
+
+
+    let iter = 0;
+
+    document.getElementById('next').addEventListener('click', iter++);
+
+</script>
 
