@@ -30,16 +30,18 @@ const description = [
 const images = [
     '01', '02', '03', '04', '05'
 ];
+
+var fs = require('fs');
+var data = JSON.parse(fs.readFileSync('public/descriptions.json', 'utf8'));
+
 const title = "Photo gallery";
 let iter = 0;
 
-/* GET home page. */
 router.get('/', function (req, res, next) {
-    console.log();
     let obj = {
         title: title,
-        describtion: description[iter],
-        imgURL: 'images/' + images[iter] + '.jpg' //'http://vignette3.wikia.nocookie.net/disneyskickinit/images/9/97/Dfsd.png/revision/20121101232515'
+        describtion: data[iter].desc,
+        imgURL: 'images/' + data[iter].photoName
     };
 
     res.render('index', obj);
@@ -47,24 +49,13 @@ router.get('/', function (req, res, next) {
 
 router.get('/prev', function (req, res) {
     if (iter > 0) iter--;
-    let obj = {
-        describtion: description[iter],
-        imgURL: 'images/' + images[iter] + '.jpg' //'http://vignette3.wikia.nocookie.net/disneyskickinit/images/9/97/Dfsd.png/revision/20121101232515'
-    };
-
-    res.render('index', obj);
+    res.redirect('/');
 });
 
 router.get('/next', function (req, res) {
-    if (iter < images.length && iter < description.length) iter++;
+    if (iter < images.length - 1 && iter < description.length - 1) iter++;
     else if (iter = images.length || iter == description.length) iter = 0;
-
-    let obj = {
-        describtion: description[iter],
-        imgURL: 'images/' + images[iter] + '.jpg' //'http://vignette3.wikia.nocookie.net/disneyskickinit/images/9/97/Dfsd.png/revision/20121101232515'
-    };
-
-    res.render('index', obj);
+    res.redirect('/');
 });
 
 

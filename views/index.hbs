@@ -1,29 +1,43 @@
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="/bootstrap/css/bootstrap-theme.min.css">
-<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>
+<!--<script type="text/javascript" src="/bootstrap/js/bootstrap.js"></script>-->
 
 <div id="content">
     <!--<h1 class="desc">{{"Photo gallery"}}</h1>-->
     <h1 class="desc">{{describtion}}</h1>
-    <button id='prev' class="nav-btn btn btn-lg btn-primary" type = "submit" value = "Rent"> <!--disabled-->
-        <span class="glyphicon glyphicon-menu-left"></span>
-    </button>
-    <button id='next' class="nav-btn btn btn-lg btn-primary" type = "submit" value = "Rent"> <!--disabled-->
-        <span class="glyphicon glyphicon-menu-right"></span>
-    </button>
+    <form action="/prev" method="GET">
+        <button id='prev' class="nav-btn btn btn-lg btn-primary" type="submit" value="Rent"> <!--disabled-->
+            <span class="glyphicon glyphicon-menu-left"></span>
+        </button>
+    </form>
+    <form action="/next" method="GET">
+        <button id='next' class="nav-btn btn btn-lg btn-primary" type="submit" value="Rent"> <!--disabled-->
+            <span class="glyphicon glyphicon-menu-right"></span>
+        </button>
+    </form>
     <img class="image" src="{{imgURL}}">
 
 
 </div>
 
 
+<script type="text/javascript">
+    //    (function () {
+    //        setInterval(next(), 60*60*1000);
+    //    })();
+    setInterval(function () {
+        next()
+    }, 5000);
 
-<script type="javascript">
+    function next() {
+        var xmlHttp = new XMLHttpRequest();
+        xmlHttp.open('GET', '/next', true); // false for synchronous request
+        xmlHttp.send(null);
+//        return xmlHttp.responseText;
+        location.reload();
+        console.log('ok');
+    }
 
-
-    let iter = 0;
-
-    document.getElementById('next').addEventListener('click', iter++);
 
 </script>
 
