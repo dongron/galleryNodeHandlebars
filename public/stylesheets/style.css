@@ -27,6 +27,7 @@ p {
 .desc {
     display: inline-block;
     color: white;
+    filter: drop-shadow(5px 5px 20px black);
 }
 
 #content {
